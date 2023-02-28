@@ -9,11 +9,7 @@ function App() {
     <ImageContextProvider>
       <Handle />
       <Routes>
-        <Route
-          exact
-          path='/'
-          element={<Navigate to={ROUTES.MOUNTAIN} replace />}
-        />
+        <Route exact path='/' element={<Navigate to={ROUTES.BIRD} replace />} />
         <Route
           exact
           path={ROUTES.BIRD}

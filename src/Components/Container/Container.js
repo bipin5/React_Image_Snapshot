@@ -5,7 +5,6 @@ import Loading from '../Search/Loading';
 
 function Container({ query }) {
   const { images, loading, onSearchResult } = useContext(ImageContext);
-
   useEffect(() => {
     onSearchResult(query);
   }, [query]);

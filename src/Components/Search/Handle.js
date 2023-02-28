@@ -7,9 +7,8 @@ const Handle = () => {
 
   const submitHandler = (event, navigate, queryInput) => {
     event.preventDefault();
-    console.log(queryInput);
+
     let url = `/search/${queryInput}`;
-    console.log(url);
     navigate(url);
   };
 

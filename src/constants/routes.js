@@ -1,8 +1,8 @@
 export const ROUTES = {
-  RECENT: 'recent',
+  RANDOM: 'random',
   BEACH: 'beach',
   BIRD: 'bird',
   MOUNTAIN: 'mountain',
   FOOD: 'food',
-  SEARCH: '/search/:query',
+  SEARCH: '/search/:queryInput',
 };

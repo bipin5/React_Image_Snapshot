@@ -5,27 +5,22 @@ import Loading from './Loading';
 const SearchBar = ({ navigate, onHandleSubmit }) => {
   const { loading, setLoading } = useContext(ImageContext);
   const [selectedQuery, setSelectedQuery] = useState('');
-  console.log('First', selectedQuery);
-
-  const onQueryChange = (event) => {
-    setSelectedQuery(event.target.value);
-  };
-  console.log('Second', selectedQuery);
 
   const submitHandler = (e) => {
-    console.log({ selectedQuery });
     {
       loading ? <Loading /> : onHandleSubmit(e, navigate, selectedQuery);
-
       setSelectedQuery('');
       setLoading(true);
     }
   };
 
+  const onQueryChange = (event) => {
+    setSelectedQuery(event.target.value);
+  };
   return (
-    <div className='search-bar-container w-100'>
-      <div className='input-group d-flex'>
-        <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}>
+      <div className='search-bar-container w-100'>
+        <div className='input-group d-flex'>
           <input
             type='text'
             name='search'
@@ -33,8 +28,8 @@ const SearchBar = ({ navigate, onHandleSubmit }) => {
             placeholder='Search'
             aria-label='Search'
             aria-describedby='search-addon'
-            onChange={onQueryChange}
             value={selectedQuery}
+            onChange={onQueryChange}
           />
           <button
             type='submit'
@@ -43,9 +38,9 @@ const SearchBar = ({ navigate, onHandleSubmit }) => {
           >
             Search
           </button>
-        </form>
+        </div>
       </div>
-    </div>
+    </form>
   );
 };
 

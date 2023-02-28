@@ -1,14 +1,12 @@
 import axios from 'axios';
 import { apiKey } from '../constants/config';
-const baseURL =
-  'https://api.flickr.com/services/rest/?method=flickr.photos.search';
+import { API_CONST } from '../constants/api';
 
 export const runAPI = (query) => {
-  console.log({ query });
   // const apiURL = ;
   const responseData = axios
     .get(
-      `${baseURL}&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
+      `${API_CONST.BASE_URL}&api_key=${apiKey}&tags=${query}&per_page=${API_CONST.PER_PAGE}&format=json&nojsoncallback=1`
     )
     .then((response) => {
       const {
