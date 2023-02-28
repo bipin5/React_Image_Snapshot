@@ -13,7 +13,7 @@ function Gallery({ data }) {
       let url = `${imageURL}/${photo.server}/${photo.id}_${photo.secret}_m.jpg`;
 
       return (
-        <NavLink to={photo.title} onClick={() => setSelectedImage(imageURL)}>
+        <NavLink to={photo.title} onClick={() => setSelectedImage(url)}>
           <img
             src={url}
             alt={photo.title}

@@ -12,7 +12,7 @@ function App() {
         <Route
           exact
           path='/'
-          element={<Navigate to={ROUTES.RECENT} replace />}
+          element={<Navigate to={ROUTES.MOUNTAIN} replace />}
         />
         <Route
           exact

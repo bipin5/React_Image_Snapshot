@@ -1,15 +1,15 @@
 import { createContext, useState } from 'react';
-import API from '../api/API';
+import { runAPI } from '../api/API';
 import Images from '../Components/Images/Images';
 export const ImageContext = createContext();
 
-export default function ImageContextProvider({ children }) {
+function ImageContextProvider({ children }) {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const onSearchResult = (query) => {
-    API(query).then((data) => {
+    runAPI(query).then((data) => {
       setImages(data);
       setLoading(true);
       setTimeout(() => {
@@ -17,15 +17,16 @@ export default function ImageContextProvider({ children }) {
       }, 2000);
     });
   };
+
   return (
     <ImageContext.Provider
       value={{
         images,
         loading,
-        selectedImage,
         setLoading,
-        setSelectedImage,
         onSearchResult,
+        selectedImage,
+        setSelectedImage,
       }}
     >
       {children}
@@ -33,3 +34,4 @@ export default function ImageContextProvider({ children }) {
     </ImageContext.Provider>
   );
 }
+export default ImageContextProvider;

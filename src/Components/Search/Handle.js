@@ -1,15 +1,15 @@
-import Search from './Search';
+import SearchBar from './SearchBar';
 import { useNavigate } from 'react-router-dom';
 import Category from './Category';
 
 const Handle = () => {
   let navigate = useNavigate();
 
-  const submitHandler = (event, navigate, query) => {
+  const submitHandler = (event, navigate, queryInput) => {
     event.preventDefault();
-    console.log(query);
-    let url = `/search/${query}`;
-
+    console.log(queryInput);
+    let url = `/search/${queryInput}`;
+    console.log(url);
     navigate(url);
   };
 
@@ -18,9 +18,7 @@ const Handle = () => {
       <div className='col-12 col-lg-8'>
         <h1 className='mb-3 text-center'> Image Snapshot</h1>
         <div className='row'>
-          <div className='col'>
-            <Search navigate={navigate} onHandleSubmit={submitHandler} />
-          </div>
+          <SearchBar navigate={navigate} onHandleSubmit={submitHandler} />
           <Category />
         </div>
       </div>
