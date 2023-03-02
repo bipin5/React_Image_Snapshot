@@ -1,8 +1,8 @@
-import ImageContextProvider from '../../Context/contextApi';
-import Handle from '../Search/Handle';
-import Item from '../Search/Item';
+import ImageContextProvider from 'Context/contextApi';
+import Handle from 'Components/Search/Handle';
+import Item from 'Components/Search/Item';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { ROUTES } from '../../constants/routes';
+import { ROUTES } from 'constants/routes';
 
 function App() {
   return (

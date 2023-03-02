@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
-import { runAPI } from '../api/API';
-import Images from '../Components/Images/Images';
+import { runAPI } from 'api/API';
+import Images from 'Components/Images/Images';
 export const ImageContext = createContext();
 
 function ImageContextProvider({ children }) {

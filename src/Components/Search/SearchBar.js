@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
-import { ImageContext } from '../../Context/contextApi';
-import Loading from './Loading';
+import { ImageContext } from 'Context/contextApi';
+import Loading from 'Components/Search/Loading';
 
 const SearchBar = ({ navigate, onHandleSubmit }) => {
   const { loading, setLoading } = useContext(ImageContext);

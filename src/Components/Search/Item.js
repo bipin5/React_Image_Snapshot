@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import Container from '../Container/Container';
+import Container from 'Components/Container/Container';
 
 function Item({ categoryInput }) {
   let { queryInput } = useParams();

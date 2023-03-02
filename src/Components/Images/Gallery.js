@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ImageContext } from '../../Context/contextApi';
-import { API_CONST } from '../../constants/api';
+import { ImageContext } from 'Context/contextApi';
+import { API_CONST } from 'constants/api';
 
 function Gallery({ data }) {
   const { setSelectedImage } = useContext(ImageContext);
@@ -18,7 +18,6 @@ function Gallery({ data }) {
             src={url}
             alt={photo.title}
             className='card-img-top h-100 img-fluid'
-            style={{ objectFit: 'cover', height: '200px' }}
           />
         </NavLink>
       );

@@ -1,6 +1,6 @@
-import SearchBar from './SearchBar';
+import SearchBar from 'Components/Search/SearchBar';
 import { useNavigate } from 'react-router-dom';
-import Category from './Category';
+import Category from 'Components/Search/Category';
 
 const Handle = () => {
   let navigate = useNavigate();
